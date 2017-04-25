@@ -8,7 +8,7 @@ public class Discard
 	//Maybe add a tracker for the number of cards and types discarded
 	public Discard() 
 	{
-		slot.setBounds(1050, 10, 200, 840);
+		slot.setBounds(1050, 10, 180, 840);
 	}
 
 	public ArrayList<Card> getCards() {

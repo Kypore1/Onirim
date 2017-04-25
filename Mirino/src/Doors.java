@@ -11,7 +11,7 @@ public class Doors
 	{
 		for(int i = 0; i<8;i++)
 		{
-			slots[i]= new Rectangle(10+110*i, 10+((i%2)*100), 100, 140);
+			slots[i]= new Rectangle(10+110*i, 10, 100, 140);
 		}
 	}
 	public ArrayList<Card> getCards() {
@@ -26,5 +26,15 @@ public class Doors
 	}
 	public void setShown(int pos,boolean set) {
 		shown[pos] = set;
+	}
+	public void Organize()
+	{
+	    for(int i = 0; i<cards.size();i++)
+	    {
+	    	if(!cards.get(i).getRect().intersects(slots[i]))
+	    	{
+	    		cards.get(i).getRect().setLocation(slots[i].getLocation());
+	    	}
+	    }
 	}
 }

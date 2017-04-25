@@ -24,14 +24,15 @@ public class PlayingArea
 	}
 	public boolean addCard(Card card)
 	{
-		if(cards.size()>0&&card.getColour().equals(cards.get(cards.size()-1).getColour())&&!card.getType().equals(cards.get(cards.size()-1).getType()))
+		if(cards.size()>0&&card.getColour().equals(cards.get(cards.size()-1).getColour())&&!card.getType().equals(cards.get(cards.size()-1).getType())&&!cards.get(cards.size()-1).getType().equals("Used"))
 		{
 			addDoorCounter();
 			cards.add(card);
-			System.out.println(getDoorCounter());
 			if(doorCounter>1)
 			{
 				doorCounter = 0;
+				cards.get(cards.size()-1).setType("Used");
+				System.out.println(getDoorCounter());
 				return true;
 			}
 		}

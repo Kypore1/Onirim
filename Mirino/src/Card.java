@@ -6,6 +6,8 @@ public class Card
 	private String type,colour;
 	private boolean locked,selected;
 	private Rectangle slot = new Rectangle();
+	private Rectangle oldSlot = new Rectangle();
+
 	private Image image;
 	public Card(String t, String c,Rectangle r,Image img)
 	{
@@ -54,6 +56,12 @@ public class Card
 	public Rectangle getRect()
 	{
 		return slot;
+	}
+	public Rectangle getOldRect() {
+		return oldSlot;
+	}
+	public void setOldRect(Rectangle oldSlot) {
+		this.oldSlot = oldSlot;
 	}
 	public Image getImage()
 	{
